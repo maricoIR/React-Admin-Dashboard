@@ -1,0 +1,9 @@
+.sidebarOpen .navItem {
+    display: block;
+}
+.sidebarClosed .navItem {
+    display: none;
+}
+.path-red path:first-child {
+    fill: red !important;
+}
