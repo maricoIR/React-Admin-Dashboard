@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     dispatch({ activePage: "Dashboard" });
-  }, []);
+  }, [activePage, dispatch]);
 
   return (
     <Layout>

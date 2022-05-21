@@ -8,7 +8,7 @@ import { Pagination } from "./components/Pagination";
 
 const Messages = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [msgPerPage, setMsgPerPage] = useState(5);
+  const [msgPerPage] = useState(5);
   const [update, setUpdate] = useState(false);
 
   const paginate = (number) => {
@@ -17,13 +17,13 @@ const Messages = () => {
   };
 
   const {
-    state: { activePage, messages, messageID },
+    state: { activePage, messages },
     dispatch,
   } = useContext(DataContext);
 
   useEffect(() => {
     dispatch({ activePage: "Messages" });
-  }, []);
+  }, [activePage, dispatch]);
   return (
     <Layout>
       <MessagesTopBar setUpdate={setUpdate} update={update} />

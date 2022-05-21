@@ -16,8 +16,7 @@ export const MessagesTopBar = ({ setUpdate, update }) => {
     if (messageID.length) {
       for (let index = 0; index <= messageID.length; index++) {
         messages.map((item) => {
-          if (item.id == messageID[index]) {
-            console.log("salam");
+          if (item.id === messageID[index]) {
             var elementPos = messages
               .map(function (x) {
                 return x.id;
@@ -27,6 +26,7 @@ export const MessagesTopBar = ({ setUpdate, update }) => {
             messages.splice(elementPos, 1);
             setUpdate(!update);
           }
+          return item;
         });
       }
     } else {

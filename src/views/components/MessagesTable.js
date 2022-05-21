@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 import StarIcon from "@mui/icons-material/Star";
 import { amber } from "@mui/material/colors";
@@ -9,7 +9,6 @@ import "../styles.css";
 const MessagesTable = ({ currentPage, msgPerPage }) => {
   const {
     state: { messages, messagesSearch, messageID },
-    dispatch,
   } = useContext(DataContext);
 
   const lastMsg = currentPage * msgPerPage;
@@ -19,7 +18,7 @@ const MessagesTable = ({ currentPage, msgPerPage }) => {
   const handleChange = (event) => {
     if (messageID.some((item) => item === event.target.id)) {
       let index = messageID.findIndex(
-        (checkbox) => checkbox == event.target.id
+        (checkbox) => checkbox === event.target.id
       );
       messageID.splice(index, 1);
     } else {
@@ -31,7 +30,7 @@ const MessagesTable = ({ currentPage, msgPerPage }) => {
     <div className="w-full bg-white rounded-[0.5rem] Tshadow flex flex-col mb-6">
       {currentMessages
         .filter((val, index) => {
-          if (messagesSearch == "") {
+          if (messagesSearch === "") {
             return val;
           } else if (
             val.name.toLowerCase().includes(messagesSearch.toLowerCase())
@@ -65,6 +64,7 @@ const MessagesTable = ({ currentPage, msgPerPage }) => {
             <div className="flex items-center gap-3">
               <img
                 src={item.image}
+                alt=""
                 className="w-7 h-7 rounded-full cursor-pointer"
               />
               <span className="font-normal text-tabletext text-[15px] cursor-pointer">

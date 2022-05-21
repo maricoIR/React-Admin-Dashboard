@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  ChevronBackCircle,
-  ChevronForwardCircle,
-  ChevronBack,
-  ChevronForward,
-} from "react-ionicons";
+import { ChevronBack, ChevronForward } from "react-ionicons";
 
 export const Pagination = ({
   msgPerPage,
@@ -24,7 +19,7 @@ export const Pagination = ({
           key={number.id}
           onClick={() => paginate(number.index)}
           className={`${
-            number.index == currentPage
+            number.index === currentPage
               ? `text-white bg-barColor rounded-full`
               : `text-tabletext`
           } w-[34px] h-[34px]  text-[15px] cursor-pointer flex items-center justify-center`}

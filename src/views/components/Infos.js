@@ -1,8 +1,5 @@
 import Canada from "../../assets/images/canada.svg";
 import Germany from "../../assets/images/germany.svg";
-import France from "../../assets/images/france.svg";
-import Italy from "../../assets/images/itly.svg";
-import Sweeden from "../../assets/images/sweeden.svg";
 import Netherlands from "../../assets/images/netherlands.svg";
 import Us from "../../assets/images/us.svg";
 
