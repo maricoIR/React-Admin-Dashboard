@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Archive, Search, TrashBin } from "react-ionicons";
+import { DataContext } from "../../context/DataContext";
 
 export const MessagesTopBar = () => {
+  const {
+    state: { messages },
+    dispatch,
+  } = useContext(DataContext);
+
+  const search = (e) => {
+    dispatch({ messagesSearch: e.target.value });
+  };
   return (
     <div className="w-full flex flex-row items-center gap-4 justify-between mb-5">
       <div className="flex items-center bg-white rounded-[0.5rem] border border-[#d1d5db] w-[200px] md:w-[280px]">
@@ -11,7 +20,8 @@ export const MessagesTopBar = () => {
         <input
           type="text"
           className="outline-none w-full bg-white rounded-tr-[0.5rem] py-2 px-3 rounded-br-[0.5rem] text-[14px] text-[#3a3a3a]"
-          placeholder="Search..."
+          placeholder="Search Names..."
+          onChange={(e) => search(e)}
         />
       </div>
       <div className="md:flex hidden items-center bg-SidebarBg rounded-[0.5rem]">

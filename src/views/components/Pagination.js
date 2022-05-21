@@ -22,9 +22,11 @@ export const Pagination = ({
       {pageNumbers.map((number) => (
         <span
           onClick={() => paginate(number)}
-          className={`w-[34px] h-[34px] text-tabletext text-[15px] cursor-pointer flex items-center justify-center ${
-            number == currentPage && `text-white bg-barColor rounded-full`
-          }`}
+          className={`${
+            number == currentPage
+              ? `text-white bg-barColor rounded-full`
+              : `text-tabletext`
+          } w-[34px] h-[34px]  text-[15px] cursor-pointer flex items-center justify-center`}
         >
           {number}
         </span>

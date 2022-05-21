@@ -2,6 +2,7 @@ import React, { useReducer, createContext } from "react";
 const initialState = {
   sidebarToggle: true,
   activePage: "Dashboard",
+  messagesSearch: "",
   messages: [
     {
       name: "Ali Jamaliniai",
