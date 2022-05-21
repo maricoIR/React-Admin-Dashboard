@@ -10,7 +10,7 @@ const Building = () => {
   } = useContext(DataContext);
 
   useEffect(() => {
-    dispatch({ activePage: "Build" });
+    dispatch({ activePage: "Building" });
   }, [activePage, dispatch]);
 
   return (
