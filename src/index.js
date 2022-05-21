@@ -12,13 +12,13 @@ root.render(
   <>
     <BrowserRouter>
       <ToastContainer
-        style={{ fontFamily: "Vazir" }}
+        style={{ fontFamily: "Inter" }}
         position="top-right"
         autoClose={3000}
         hideProgressBar={false}
         newestOnTop
         closeOnClick
-        rtl={true}
+        rtl={false}
         theme="colored"
         draggable
         pauseOnHover

@@ -1,15 +1,37 @@
 import React, { useContext } from "react";
 import { Archive, Search, TrashBin } from "react-ionicons";
+import { toast } from "react-toastify";
 import { DataContext } from "../../context/DataContext";
 
-export const MessagesTopBar = () => {
+export const MessagesTopBar = ({ setUpdate, update }) => {
   const {
-    state: { messages },
+    state: { messages, messageID },
     dispatch,
   } = useContext(DataContext);
 
   const search = (e) => {
     dispatch({ messagesSearch: e.target.value });
+  };
+  const archive = () => {
+    if (messageID.length) {
+      for (let index = 0; index <= messageID.length; index++) {
+        messages.map((item) => {
+          if (item.id == messageID[index]) {
+            console.log("salam");
+            var elementPos = messages
+              .map(function (x) {
+                return x.id;
+              })
+              .indexOf(item.id);
+
+            messages.splice(elementPos, 1);
+            setUpdate(!update);
+          }
+        });
+      }
+    } else {
+      toast.error("Please select some messages");
+    }
   };
   return (
     <div className="w-full flex flex-row items-center gap-4 justify-between mb-5">
@@ -24,15 +46,21 @@ export const MessagesTopBar = () => {
           onChange={(e) => search(e)}
         />
       </div>
-      <div className="md:flex hidden items-center bg-SidebarBg rounded-[0.5rem]">
+      <div className="xl:flex hidden items-center bg-SidebarBg rounded-[0.5rem]">
         <div className="flex items-center">
-          <div className="flex items-center justify-center cursor-pointer bg-SidebarBg py-3 relative px-4 hover:bg-[#161d27] showToolTip transition-all rounded-tl-[0.5rem] rounded-bl-[0.5rem]">
+          <div
+            className="flex items-center justify-center cursor-pointer bg-SidebarBg py-3 relative px-4 hover:bg-[#161d27] showToolTip transition-all rounded-tl-[0.5rem] rounded-bl-[0.5rem]"
+            onClick={() => archive()}
+          >
             <Archive color={"#fff"} width="22px" height="22px" />
             <span className="absolute bottom-[-40px] left-[-5px] px-2 py-1 bg-navItemHover sharpArrow shadow-md text-white font-light rounded-[0.5rem] text-[14px]">
               Archive
             </span>
           </div>
-          <div className="flex items-center justify-center cursor-pointer bg-SidebarBg py-3 relative px-4 hover:bg-[#161d27] showToolTip transition-all rounded-tr-[0.5rem] rounded-br-[0.5rem]">
+          <div
+            className="flex items-center justify-center cursor-pointer bg-SidebarBg py-3 relative px-4 hover:bg-[#161d27] showToolTip transition-all rounded-tr-[0.5rem] rounded-br-[0.5rem]"
+            onClick={() => archive()}
+          >
             <TrashBin color={"#fff"} width="22px" height="22px" />
             <span className="absolute bottom-[-40px] left-[-5px] px-2 py-1 bg-navItemHover sharpArrow shadow-md text-white font-light rounded-[0.5rem] text-[14px]">
               Delete

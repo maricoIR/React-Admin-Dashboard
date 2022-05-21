@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DataContext } from "../../context/DataContext";
 import StarIcon from "@mui/icons-material/Star";
 import { amber } from "@mui/material/colors";
@@ -8,13 +8,24 @@ import "../styles.css";
 
 const MessagesTable = ({ currentPage, msgPerPage }) => {
   const {
-    state: { messages, messagesSearch },
+    state: { messages, messagesSearch, messageID },
     dispatch,
   } = useContext(DataContext);
 
   const lastMsg = currentPage * msgPerPage;
   const firstMsg = lastMsg - msgPerPage;
   const currentMessages = messages.slice(firstMsg, lastMsg);
+
+  const handleChange = (event) => {
+    if (messageID.some((item) => item === event.target.id)) {
+      let index = messageID.findIndex(
+        (checkbox) => checkbox == event.target.id
+      );
+      messageID.splice(index, 1);
+    } else {
+      messageID.push(event.target.id);
+    }
+  };
 
   return (
     <div className="w-full bg-white rounded-[0.5rem] Tshadow flex flex-col mb-6">
@@ -34,7 +45,11 @@ const MessagesTable = ({ currentPage, msgPerPage }) => {
             className="w-full flex xl:flex-row flex-col items-start gap-3 xl:items-center justify-between border-b-[0.0625rem] hover:bg-[#f2f4f6] border-tableboder py-4 px-4"
           >
             <div className="xl:flex hidden items-center gap-4">
-              <Checkbox className="border border-[#d1d5db]" />
+              <Checkbox
+                className="border border-[#d1d5db]"
+                id={item.id}
+                onChange={(e) => handleChange(e)}
+              />
               <Checkbox
                 icon={<StarIcon />}
                 checkedIcon={<StarIcon />}

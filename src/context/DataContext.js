@@ -3,8 +3,10 @@ const initialState = {
   sidebarToggle: true,
   activePage: "Dashboard",
   messagesSearch: "",
+  messageID: [],
   messages: [
     {
+      id: "1",
       name: "Ali Jamaliniai",
       message:
         "Long time no see - Can we help you set up email forwarding? We’ve noticed you haven’t se...",
@@ -12,6 +14,7 @@ const initialState = {
       image: "/images/userone.jpg",
     },
     {
+      id: "2",
       name: "Hossein Ojaq",
       message:
         "Long time no see - Can we help you set up email forwarding? We’ve noticed you haven’t se...",
@@ -19,6 +22,7 @@ const initialState = {
       image: "/images/usertwo.jpg",
     },
     {
+      id: "3",
       name: "Moein Rahvar",
       message:
         "Long time no see - Can we help you set up email forwarding? We’ve noticed you haven’t se...",
@@ -26,6 +30,7 @@ const initialState = {
       image: "/images/userthree.jpg",
     },
     {
+      id: "4",
       name: "Matin Sadeghi",
       message:
         "Long time no see - Can we help you set up email forwarding? We’ve noticed you haven’t se...",
@@ -33,6 +38,7 @@ const initialState = {
       image: "/images/userfour.jpg",
     },
     {
+      id: "5",
       name: "Ashkan Yamii",
       message:
         "Long time no see - Can we help you set up email forwarding? We’ve noticed you haven’t se...",
@@ -40,6 +46,7 @@ const initialState = {
       image: "/images/userfive.jpg",
     },
     {
+      id: "6",
       name: "Ali Soleimanii",
       message:
         "Long time no see - Can we help you set up email forwarding? We’ve noticed you haven’t se...",
@@ -47,6 +54,7 @@ const initialState = {
       image: "/images/userthree.jpg",
     },
     {
+      id: "7",
       name: "Ali Soleimanii",
       message:
         "Long time no see - Can we help you set up email forwarding? We’ve noticed you haven’t se...",
@@ -54,6 +62,7 @@ const initialState = {
       image: "/images/userfive.jpg",
     },
     {
+      id: "8",
       name: "Ali Soleimanii",
       message:
         "Long time no see - Can we help you set up email forwarding? We’ve noticed you haven’t se...",
@@ -61,6 +70,7 @@ const initialState = {
       image: "/images/usertwo.jpg",
     },
     {
+      id: "9",
       name: "Ali Soleimanii",
       message:
         "Long time no see - Can we help you set up email forwarding? We’ve noticed you haven’t se...",
@@ -68,6 +78,7 @@ const initialState = {
       image: "/images/userfour.jpg",
     },
     {
+      id: "10",
       name: "Ali Soleimanii",
       message:
         "Long time no see - Can we help you set up email forwarding? We’ve noticed you haven’t se...",

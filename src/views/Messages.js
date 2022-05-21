@@ -9,13 +9,15 @@ import { Pagination } from "./components/Pagination";
 const Messages = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [msgPerPage, setMsgPerPage] = useState(5);
+  const [update, setUpdate] = useState(false);
 
   const paginate = (number) => {
     setCurrentPage(number);
+    dispatch({ messageID: [] });
   };
 
   const {
-    state: { activePage, messages },
+    state: { activePage, messages, messageID },
     dispatch,
   } = useContext(DataContext);
 
@@ -24,7 +26,7 @@ const Messages = () => {
   }, []);
   return (
     <Layout>
-      <MessagesTopBar />
+      <MessagesTopBar setUpdate={setUpdate} update={update} />
       <MessagesTable currentPage={currentPage} msgPerPage={msgPerPage} />
       <Pagination
         msgPerPage={msgPerPage}
