@@ -5,11 +5,6 @@
     --light-black: #1d1b31;
 }
 
-::selection {
-    color: var(--white-color);
-    background: var(--black-color);
-}
-
 .sidebar {
     position: fixed;
     top: 0;
@@ -23,6 +18,19 @@
     transition-property: all !important;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
     transition-duration: 400ms !important;
+}
+.red_flag {
+   margin-left: 65px !important;
+   background-color: red !important;
+   border-radius: 999px !important;
+   height: 20px !important;
+   width: 20px !important;
+   display: flex !important;
+   align-items: center !important;
+   justify-content: center !important;
+   font-size: 13px !important;
+   font-weight: 400 !important;
+   transition: all 0s ease-in-out !important;
 }
 
 .sidebar.active {

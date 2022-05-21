@@ -18,3 +18,25 @@
      -webkit-print-color-adjust: exact;
      transition: background-color 0.2s ease-in-out 0s, background-position 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s, box-shadow 0.2s ease-in-out 0s;
 }
+.sharpArrow {
+    opacity: 0 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.showToolTip:hover .sharpArrow {
+    opacity: 1 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.sharpArrow::before {
+     content: '';
+     width: 0;
+     height: 0;
+     border-top: 10px solid transparent;
+     border-bottom: 10px solid transparent;
+     border-right: 10px solid var(--white-color);
+     position: absolute;
+     left: 28px;
+     top: -11px;
+     transform: rotate(90deg);
+}
