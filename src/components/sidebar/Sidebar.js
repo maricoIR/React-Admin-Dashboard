@@ -54,7 +54,7 @@ const Sidebar = () => {
                 cssClasses="path-red"
               />
               <span className="links_name">Messages</span>
-              {/* <span className="links_name red_flag">4</span> */}
+              {/* <span className="links_name red_flags">4</span> */}
             </NavLink>
             <span className="tooltip">Messages</span>
           </li>
