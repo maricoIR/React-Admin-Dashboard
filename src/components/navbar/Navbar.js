@@ -2,6 +2,7 @@ import { Menu } from "react-ionicons";
 import { Notifications } from "react-ionicons";
 import { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
+import AccountMenu from "./AccountMenu";
 
 const Navbar = () => {
   const {
@@ -16,12 +17,15 @@ const Navbar = () => {
       >
         <Menu color={"#374151"} width="32px" height="32px" />
       </span>
-      <Notifications
-        color={"#374151"}
-        width="28px"
-        height="28px"
-        cssClasses="cursor-pointer"
-      />
+      <div className="flex items-center gap-5">
+        <Notifications
+          color={"#374151"}
+          width="28px"
+          height="28px"
+          cssClasses="cursor-pointer"
+        />
+        <AccountMenu />
+      </div>
     </div>
   );
 };
