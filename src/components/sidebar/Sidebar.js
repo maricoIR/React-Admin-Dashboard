@@ -4,6 +4,7 @@ import { DataContext } from "../../context/DataContext";
 import { NavLink } from "react-router-dom";
 import {
   StatsChart,
+  Calendar,
   People,
   Card,
   Settings,
@@ -60,6 +61,13 @@ const Sidebar = () => {
               {/* <span className="links_name red_flag">4</span> */}
             </NavLink>
             <span className="tooltip">Messages</span>
+          </li>
+          <li>
+            <NavLink to="/calendar">
+              <Calendar color={"#9ca3af"} width="20px" height="20px" />
+              <span className="links_name">Calendar</span>
+            </NavLink>
+            <span className="tooltip">Calendar</span>
           </li>
           <li>
             <NavLink to="/building">
