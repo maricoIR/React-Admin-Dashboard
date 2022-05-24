@@ -9,6 +9,7 @@
     "@mui/material": "^5.8.0",
     "@syncfusion/ej2": "^20.1.56",
     "@syncfusion/ej2-react-calendars": "^20.1.56",
+    "@syncfusion/ej2-react-kanban": "^20.1.55",
     "@syncfusion/ej2-react-schedule": "^20.1.56",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",

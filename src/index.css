@@ -1,4 +1,4 @@
-@import url('https://cdn.syncfusion.com/ej2/material.css');
+@import url("./material.css");
 
 @tailwind base;
 @tailwind components;
@@ -16,7 +16,15 @@
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06) !important
     }
 }
-
+.e-kandan{
+  background: #f2f4f6 !important;
+}
+.e-kanban .e-kanban-table .e-header-cells {
+  background: #f2f4f6 !important;
+}
+.e-kanban .e-kanban-table.e-content-table .e-content-row:not(.e-swimlane-row) td {
+  background: #f2f4f6 !important;
+}
 .Toastify__toast-body {
   font-family: "Inter",
     Arial,

@@ -5,6 +5,7 @@ import Messages from "./views/Messages";
 import "./index.css";
 import Building from "./views/Building";
 import Calendar from "./views/Calendar";
+import Tasks from "./views/Tasks";
 
 const AppRouter = () => {
   return (
@@ -13,6 +14,7 @@ const AppRouter = () => {
       <Route path="/messages" element={<Messages />} />
       <Route path="/building" element={<Building />} />
       <Route path="/calendar" element={<Calendar />} />
+      <Route path="/tasks" element={<Tasks />} />
     </Routes>
   );
 };

@@ -6,6 +6,7 @@ import {
   StatsChart,
   Calendar,
   People,
+  Grid,
   Card,
   Settings,
   LogOut,
@@ -68,6 +69,7 @@ const Sidebar = () => {
             </NavLink>
             <span className="tooltip">Dashboard</span>
           </li>
+
           <li>
             <NavLink
               to="/messages"
@@ -85,6 +87,18 @@ const Sidebar = () => {
               {/* <span className="links_name red_flag">4</span> */}
             </NavLink>
             <span className="tooltip">Messages</span>
+          </li>
+          <li>
+            <NavLink
+              to="/tasks"
+              className={`w-full ${
+                activePage === `Tasks` && `bg-navItemHover`
+              }`}
+            >
+              <Grid color={"#9ca3af"} width="20px" height="20px" />
+              <span className="links_name">Tasks</span>
+            </NavLink>
+            <span className="tooltip">Tasks</span>
           </li>
           <li>
             <NavLink to="/calendar">
