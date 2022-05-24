@@ -1,5 +1,5 @@
 import reactIcon from "../../assets/images/reactIcon.png";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { DataContext } from "../../context/DataContext";
 import { NavLink } from "react-router-dom";
 import {
@@ -16,7 +16,31 @@ import "./Sidebarstyles.css";
 const Sidebar = () => {
   const {
     state: { sidebarToggle, activePage },
+    dispatch,
   } = useContext(DataContext);
+
+  const [screenSize, setScreenSize] = useState(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (screenSize < 750) {
+      dispatch({ sidebarToggle: false });
+    } else {
+      dispatch({ sidebarToggle: true });
+    }
+  }, [screenSize]);
+
   return (
     <>
       <div className={`sidebar ${sidebarToggle && `active`}`}>

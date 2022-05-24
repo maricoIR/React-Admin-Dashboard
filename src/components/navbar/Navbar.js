@@ -3,10 +3,11 @@ import { Notifications } from "react-ionicons";
 import { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 import AccountMenu from "./AccountMenu";
+import { HelpCircleOutline } from "react-ionicons";
 
 const Navbar = () => {
   const {
-    state: { sidebarToggle },
+    state: { sidebarToggle, hint },
     dispatch,
   } = useContext(DataContext);
   return (
@@ -18,6 +19,12 @@ const Navbar = () => {
         <Menu color={"#374151"} width="32px" height="32px" />
       </span>
       <div className="flex items-center gap-5">
+        {/* {hint && (
+          <div className="flex items-center gap-2 border-gray-300 cursor-pointer rounded-full border px-2 py-1">
+            <HelpCircleOutline />
+            <span className="text-boxText font-normal text-sm">Help</span>
+          </div>
+        )} */}
         <Notifications
           color={"#374151"}
           width="28px"
